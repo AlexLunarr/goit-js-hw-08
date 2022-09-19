@@ -30,7 +30,8 @@ function preventDef(event) {
     return;
 	};
 	
-	var lightbox = new SimpleLightbox('.gallery .gallery__item', { captionsData: 'alt', captionDelay: 250, animationSpeed: 250, });
-console.log(lightbox);
+	if (!document.querySelector(".simple-lightbox")) {
+		new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, animationSpeed: 250, });
+	};
 };
 
