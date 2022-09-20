@@ -40,17 +40,22 @@ event.preventDefault();
 	const messageParse = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 	console.log(messageParse);
 	
-	// updateInput();
+	updateInput();
 	form.reset();
-	localStorage.removeItem(LOCALSTORAGE_KEY);
+	localStorage.clear();
 };
 
 function updateInput() {
-	// let messageParse = 
-		formState = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-		form.email.value = formState.email || '';
-		form.message.value = formState.message || '';
+	const messageParse = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+
+if (messageParse !== null) {
+	formState.email = messageParse.email;
+	formState.message = messageParse.message;
+		form.email.value = formState.email;
+		form.message.value = formState.message;
 }
+}
+
 // _________________________
 
 // input.addEventListener('input', throttle(inputListener, 500));
