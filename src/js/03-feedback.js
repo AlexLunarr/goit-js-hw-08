@@ -21,23 +21,33 @@ function inputListener(event) {
 // console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
 
 function submitListener(event) {
-event.preventDefault();
-	const messageParse = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+	event.preventDefault();
+	try {
+ const messageParse = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 	console.log(messageParse);
 	
 	updateInput();
 	form.reset();
 	localStorage.clear();
+} catch (error) {
+ console.log(error.name);
+  console.log(error.message);
+}
 };
 
 function updateInput() {
-	const messageParse = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
-if (messageParse !== null) {
+	try {
+		const messageParse = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+		if (messageParse !== null) {
 	formState.email = messageParse.email;
 	formState.message = messageParse.message;
 		form.email.value = formState.email;
 		form.message.value = formState.message;
+}
+} catch (error) {
+  console.log(error.name);
+  console.log(error.message);
 }
 }
 
