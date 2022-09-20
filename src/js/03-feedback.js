@@ -7,22 +7,7 @@ const LOCALSTORAGE_KEY = "feedback-form-state";
 const formState = {};
 
 updateInput();
-// updateInput();
-// updateOutput();
-// form.addEventListener("submit", saveMessage);
 
-// function saveMessage(evt) {
-//   evt.preventDefault();
-//   localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(form.elements.message.value) );
-//   updateOutput();
-//   form.reset();
-// }
-
-// function updateOutput() {
-// 	form.elements.message.value = localStorage.getItem(LOCALSTORAGE_KEY) || "";
-// 	  form.elements.email.value = localStorage.getItem(LOCALSTORAGE_KEY) || "";
-// }
-// _____________________
 form.addEventListener('input', throttle(inputListener, 500));
 form.addEventListener('submit', submitListener);
 
@@ -56,24 +41,5 @@ if (messageParse !== null) {
 }
 }
 
-// _________________________
-
-// input.addEventListener('input', throttle(inputListener, 500));
-// function inputListener(event) {
-
-// 	formState.email = event.target.value;
-// 	localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formState));
-// };
-// textarea.addEventListener('input',throttle(textareaListener, 500));
-// function textareaListener(event) {
-// 	formState.message = event.target.value;
-// 	localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formState))
-// };
-// console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
-
-// function updateOutput() {
-// 	input.value = (JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY))).email || "";
-// 	textarea.value = (JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY))).message || "";
-// }
 
 
