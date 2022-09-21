@@ -42,8 +42,8 @@ function updateInput() {
 		if (messageParse !== null) {
 	formState.email = messageParse.email;
 	formState.message = messageParse.message;
-		form.email.value = formState.email;
-		form.message.value = formState.message;
+			form.email.value = formState.email || '';
+		form.message.value = formState.message  || '';
 }
 } catch (error) {
   console.log(error.name);
